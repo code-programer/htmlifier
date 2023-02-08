@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>HTMLifier - a tool to eazyli build a html page</title>
+  </head>
+  <body>
+    <div id="element-sett" class="left-panel"></div>
+    <div id="screen" class="center-screen"></div>
+    <div id="file-sett" class="right-panel">
+    <div id="pagesett">
+      <input type="selector" id="newname" name="newname">
+        <option for="newname" value="height align">Height align</option>
+      <input type="selector" id="newvalue"><button class="add" onclick="addPgSett()">+</button>
+      <div id="newvo"></div>
+    </div>
+    </div>
+    <br>
+    <textarea id="js" class="center-screen" placeholder="Write your js here..."></textarea>
+  </body>
+  <script>
+    function nvu(e){
+      var value = document.getElementById("newname").value;
+      var options = pgSettOp[pageSett[value]];
+      for(option in options){
+        var o = options[option];
+        var op = document.createElement("option");
+        op.setAttribute("value",o.v)
+        op.innerHTML = o.html;
+        document.getElementById("newvo").appendChild(op)
+        
+      }
+    }
+    document.getElementById("newname").addEventListener("change",nvu)
+    var pageSett = {"height align":"top"}
+    var pgSettA = {"center":"48%"}
+    var screen = document.getElementById("screen");
+    function(){
+      screen.style[pageSett[document.getElementById("newname").value]] = pgSetA[document.getElementById("newvalue").value];
+    }
+  </script>
+</html>
