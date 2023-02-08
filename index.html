@@ -7,10 +7,10 @@
     <div id="screen" class="center-screen"></div>
     <div id="file-sett" class="right-panel">
     <div id="pagesett">
-      <input type="selector" id="newname" name="newname">
+      <select id="newname" name="newname">
         <option for="newname" value="height align">Height align</option>
-      <input type="selector" id="newvalue"><button class="add" onclick="addPgSett()">+</button>
-      <div id="newvo"></div>
+      </select>
+      <select id="newvalue"></select><button class="add" onclick="addPgSett()">+</button>
     </div>
     </div>
     <br>
@@ -25,7 +25,7 @@
         var op = document.createElement("option");
         op.setAttribute("value",o.v)
         op.innerHTML = o.html;
-        document.getElementById("newvo").appendChild(op)
+        document.getElementById("newvalue").appendChild(op)
         
       }
     }
